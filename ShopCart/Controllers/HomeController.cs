@@ -20,6 +20,7 @@ namespace ShopCart.Controllers
 
         public IActionResult Index()
         {
+            //view when not specified render same html file as action(method) name
             return View();
         }
 

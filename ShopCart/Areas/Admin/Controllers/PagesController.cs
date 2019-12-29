@@ -45,6 +45,7 @@ namespace ShopCart.Areas.Admin.Controllers
 
         //POST //admin/pages/create
         [HttpPost] //If you not specify request attribute it is get by default
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Page page) // Page is passed because Create.cshtml uses @model Page (on top)
         {
             if (ModelState.IsValid)

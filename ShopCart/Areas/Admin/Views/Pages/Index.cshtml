@@ -37,7 +37,7 @@
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 @if (item.Slug != "home")
                 {
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a class="confirmDeletion" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 }
             </td>
         </tr>

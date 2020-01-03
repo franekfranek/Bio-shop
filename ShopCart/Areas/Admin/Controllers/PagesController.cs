@@ -127,5 +127,22 @@ namespace ShopCart.Areas.Admin.Controllers
 
             return RedirectToAction("Index");
         }
+
+        //post /admin/pages/reorder
+        [HttpPost] 
+        public async Task<IActionResult> Reorder(int[]id) //it changes the sorting values depends on d&d  
+        {
+            int count = 1;
+
+            foreach (var pageId in id)
+            {
+                Page page = await context.Pages.FindAsync(pageId); //is the same as ...Where(x => x.Id = pageId)
+                page.Sorting = count;
+                context.Update(page);
+                await context.SaveChangesAsync();
+                count++;
+            }
+            return Ok(); // it returns status 200 ok response :D:D:D
+        }
     }
 }

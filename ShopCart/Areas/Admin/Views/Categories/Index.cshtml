@@ -9,7 +9,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table sorting" id="categories">
     <thead>
         <tr>
             <th>
@@ -22,22 +22,39 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            
-            <td>
-                @item.Name
-            </td>
-            <td>
-                @item.Slug
-            </td>
-            
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a class="confirmDeletion" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr id="id_@item.Id">
+
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Slug
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a class="confirmDeletion" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+@section Scripts {
+    <script>
+        $("table#categories tbody").sortable({
+            items: "tr:not(.home)",
+            placeholder: "ui-state-highlight",
+            update: function () {
+                let ids = $("table#categories tbody").sortable("serialize");
+                let url = "/admin/categories/reorder";
+
+                $.post(url, ids, function () { });
+            }
+        })
+    </script>
+}
+

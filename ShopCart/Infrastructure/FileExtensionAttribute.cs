@@ -24,7 +24,7 @@ namespace ShopCart.Infrastructure
                 var extension = Path.GetExtension(file.FileName);
 
                 string[] extensions = { "jpg", "png" };
-                bool result = extension.Any(x => extension.EndsWith(x));
+                bool result = extensions.Any(x => extension.EndsWith(x));
 
                 if (!result)
                 {

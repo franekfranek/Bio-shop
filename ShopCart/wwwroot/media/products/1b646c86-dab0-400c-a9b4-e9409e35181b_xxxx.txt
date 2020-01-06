@@ -1,0 +1,13 @@
+zad2. manager linii lotniczych. Firma zatrudnia hostessy i pilotów. kazdy pracownik posiada podstawowe dane osobiste, imie, telefon, język. Piloci dodatkowo posiadaja kompas otrzymywany jednorazowo, jezeli nie ma ktoryś znich , nalezy mu taki kompas dać. kazdy lot posiada  1 Pilota 1 coPilota i 4 hostessy i 100-300 pasażerów. Za kazdym razem stworzenia lotu linie musza sprawdzic czy obaj piloci mają kompas i czy hostessy maja ten sam jezyk co język lotu i czy liczba pasazerow nie przekracza 250 . Trzeba testowo stworzyć lot i sprawdzic czy sie nadaje. Języki to angielski, ruski, niemiecki, polski.
+dystuje z glowy  :stuck_out_tongue: ale chyba tak to było. jak wroce do domu to poszukam kartek z treścią
+dyktuje*
+
+
+zad1 . jest jeden bank(singleton). w tym banku sa 2 rozne rodzaje kont, firmowe i indywidualne. konto firmowe ma bezplatne przelewy z indywidualnego pobierania jest prowizja 1zł za kazdy przelew, zaimplementowac metody wplaty środków i wypłaty, napisac testy,. jakos tak to szło
+
+
+
+Odrazu jak dostaniesz zadanie to szukaj enumów, bo są pewnie w większości zadań. Ja np. Miałam bank i enumem, były kursy walut. Czesto jest tez singleton (u mnie to był bank, ktos miał big ben-a). Trzeba uważać, bo czasami logiczne bylo by zrobic cos obiektem, ale na potrzeby samego zdania potrzebny jest tylko string. Ja np. tak miałam z użytkownikami, ale na szczęście szybko się zoriętowałam.  W moim zadaniu chodzilo głównie o to żeby były 3 rodzaje kont i żeby można robić transfery z uwzględnieniem prowizji.
+
+
+Trwa godzinę, najpierw jest 15 minut na przeczytanie zadania i narysowanie do niego uml. Ma uml dodatkowo wypisujesz zmienne i metody jakie będą ci potrzebne z ich scopem (+ - # ~) oraz typy zmiennych i parametrów metod. Caly czas opisujesz na głos co robisz. W międzyczasie mozesz dostać jakieś pytania o teorię. Reszta czasu na implementację, jak masz to dobrze rozrysowane to sama implementacja jest już prosta, ale w efekcie powinno być w takim stanie, żeby już zadziałać. Pewnie, w którymś momencie zostaniesz poproszona o napisanie jakiegoś prostego testu.

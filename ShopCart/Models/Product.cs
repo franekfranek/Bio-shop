@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 namespace ShopCart.Models
 {
     public class Product
+        //ALL THIS ANNOTATIONS ARE BACKEND VALIDATIONS 
+        //TODO CHECK CLIENT SIDE VALIDATION!!!!
     {
         public int Id { get; set; }
         [Required, MinLength(2, ErrorMessage = "Minimal length is 2")]
@@ -23,12 +25,13 @@ namespace ShopCart.Models
         [Display(Name ="Category")]
         [Range(1, int.MaxValue, ErrorMessage = "Please choose a category")]
         public int CategoryId { get; set; }
-        [FileExtension]
         public string Image { get; set; }
         
         [ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
-        [NotMapped] // means this has nothing to do with the table in db
+        // means this has nothing to do with the table in db
+        [NotMapped] 
+        [FileExtension]
         public IFormFile ImageUpload { get; set; }
     }
 }

@@ -52,15 +52,23 @@ namespace ShopCart
 
             app.UseEndpoints(endpoints =>
             {
+                //WHEN U SPECIFY THE ROUTS U GO FROM MOST SPECIFIC TO LESS SPECIFIC
+                endpoints.MapControllerRoute(
+                    "pages",
+                    "{slug?}",
+                    defaults: new { controller = "Pages", action = "Page" }
+                );
+
                 endpoints.MapAreaControllerRoute(
                     name: "areas",
                     areaName: "Admin",
                     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-                  );
+               );
 
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
+               );
             });
         }
     }

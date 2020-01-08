@@ -9,6 +9,7 @@ using ShopCart.Models;
 
 namespace ShopCart.Controllers
 {
+    //ctrl shift enter new line
     public class PagesController : Controller
     {
         private readonly ShopCartContext context;

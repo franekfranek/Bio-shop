@@ -10,6 +10,8 @@ using ShopCart.Models;
 
 namespace ShopCart.Controllers
 {
+    [Area("General")]
+    [Route("General/[controller]/[action]")]
     public class ProductsController : Controller
     {
         private readonly ShopCartContext context;

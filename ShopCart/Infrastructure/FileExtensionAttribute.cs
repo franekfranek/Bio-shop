@@ -13,10 +13,6 @@ namespace ShopCart.Infrastructure
         //validationContext is used for (db context)services if you need to
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            //TODO var context = (ShopCartContext)validationContext.GetService(typeof(ShopCartContext)); used in case of services needed
-
-            //value.ToString() to validate the string??
-
             var file = value as IFormFile;
 
             if(file != null)

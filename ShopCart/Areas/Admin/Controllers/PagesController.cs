@@ -10,6 +10,7 @@ using ShopCart.Models;
 namespace ShopCart.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Route("Admin/[controller]/[action]")]
     public class PagesController : Controller
     {
         private readonly ShopCartContext context;

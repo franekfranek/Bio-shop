@@ -9,7 +9,7 @@ namespace ShopCart.Infrastructure
 {
     public static class SessionExtensions
     {
-        //TODO what is this in parameter means here
+        //TODO what is this in parameters means here
         public static void SetJson(this ISession session, string key, object value)
         {
             session.SetString(key, JsonConvert.SerializeObject(value));

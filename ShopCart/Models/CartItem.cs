@@ -22,6 +22,10 @@ namespace ShopCart.Models
             Quantity = 1;
             Image = product.Image; 
         }
+
+        public CartItem()
+        {
+        }
     }
 
 

@@ -25,7 +25,15 @@ namespace ShopCart
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMemoryCache();
+            services.AddSession(options => 
+            {
+                //options.IdleTimeout = TimeSpan.FromSeconds(2); THIS CLEAR SESSION IN 2 SECONDS FROMSECOND DAY HOURS ETC
+                //options.IdleTimeout = TimeSpan.FromDays(2);
+            });
+
             services.AddControllersWithViews();
+
             services.AddDbContext<ShopCartContext>(options => options.UseSqlServer(Configuration.
                                                                 GetConnectionString("ShopCartContext")));
         }
@@ -48,6 +56,8 @@ namespace ShopCart
 
             app.UseRouting();
 
+            app.UseSession();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -57,28 +67,48 @@ namespace ShopCart
 
                 //WHEN U SPECIFY THE ROUTS U GO FROM MOST SPECIFIC TO LESS SPECIFIC
                 //routes look like / or /products 
-                endpoints.MapControllerRoute(
-                    "pages",
-                    "{slug?}",
-                    defaults: new { controller = "Pages", action = "Page" }
-                );
+                //endpoints.MapControllerRoute(
+                //    "pages",
+                //    "{slug?}",
+                //    defaults: new { controller = "Pages", action = "Page" }
+                //);
 
-                endpoints.MapControllerRoute(
-                    "products",
-                    "products/{categorySlug}",
-                    defaults: new { controller = "Products", action = "ProductsByCategory" }
-                );
-                //routes look like admin/products/create 
+                //endpoints.MapControllerRoute(
+                //    "products",
+                //    "products/{categorySlug?}",
+                //    defaults: new { controller = "Products", action = "ProductsByCategory" }
+                //);
+
+
+                //endpoints.MapControllerRoute(
+                //  name: "default",
+                //  pattern: "{controller=Pages}/{action=Page}/{id?}"
+                //);
+
+
+
+                endpoints.MapAreaControllerRoute(
+                        name: "areas",
+                        areaName: "General",
+                        pattern: "{area:exists}/{controller=Pages}/{action=Page}/{id?}"
+                    //defaults: new { area = "General", controller = "Pages", action = "Page" }
+                    );
                 endpoints.MapAreaControllerRoute(
                     name: "areas",
                     areaName: "Admin",
-                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-               );
+                    pattern: "{area:exists}/{controller}/{action}/{id?}"
+                //defaults: new { area = "Admin", controller="Products", action="Index" }
+                );
 
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}"
-               );
+
+
+                //    endpoints.MapControllerRoute(
+                //        name: "areas",
+                //        pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                //);
+
+
+
             });
         }
     }

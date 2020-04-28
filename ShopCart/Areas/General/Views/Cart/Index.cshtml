@@ -31,9 +31,16 @@
                     <td>@item.ProductName</td>
                     <td>@item.Quantity</td>
                     <td>
-                        <a asp-action="Add" asp-route-id="@item.ProductId" class="btn btn-sm btn-primary">+</a>
-                        <a asp-action="Decrease" asp-route-id="@item.ProductId" class="btn btn-sm btn-success">-</a>
-                        <a asp-action="Remove" asp-route-id="@item.ProductId" class="btn btn-sm btn-danger">Remove</a>
+                        <a asp-action="Add" asp-route-id="@item.ProductId">
+                            <i class="material-icons-outlined cart-icons-small">add_circle_outline</i>
+                        </a>
+                        <a asp-action="Decrease" asp-route-id="@item.ProductId">
+                            <i class="material-icons-outlined cart-icons-small">remove_circle_outline</i>
+                        </a>
+
+                        <a asp-action="Remove" asp-route-id="@item.ProductId">
+                            <i class="material-icons-outlined cart-icons-small">delete</i>
+                        </a>
                     </td>
                     <td>@item.Price.ToString("C2")</td>
                     <td>@Model.CartItems.Where(x => x.ProductId == item.ProductId).Sum(x => x.Quantity * x.Price).ToString("C2") </td>
@@ -41,14 +48,18 @@
             }
 
             <tr>
-                <td class="text-right" colspan="4">Grand total: @Model.GrandTotal.ToString("C2")</td>
+                <td class="text-right" colspan="5" style="font-size:20px; font-weight:bold;">Grand total: @Model.GrandTotal.ToString("C2")</td>
             </tr>
 
             <tr>
                 <td class="text-right" colspan="4">
-                    <a asp-action="Clear" class="btn btn-danger">Clear Cart</a>
-                    <a href="#" class="btn btn-primary checkout">Check out</a>
+                    <div class="custom-button add" style="width:110px; height:40px; float:right; bottom:5px;">
+                        <a class="littleb" asp-action="Clear">Clear</a>
+                    </div>
                 </td>
+                <td><a href="#" class="checkout" id="paypal-button-container"></a></td>
+
+                
 
             </tr>
 
@@ -74,8 +85,36 @@ else
                 $.get("/general/cart/clear", {}, function () {
                     $("form.paypalform").submit();
                 });
-                
+
             });
         });
     </script>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>
+    <script>
+        paypal.Buttons({
+            style: {
+                shape: 'pill',
+                color: 'blue',
+                layout: 'horizontal',
+                label: 'paypal',
+
+            },
+            createOrder: function (data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '1'
+                        }
+                    }]
+                });
+            },
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                });
+            }
+        }).render('#paypal-button-container');
+    </script>
+
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ShopCart.Infrastructure
 {
-    //viewComponent suffix is the same as attribute suffix (fileextension e.x)
+    //viewComponent suffix is the same as attribute suffix (file extension e.x)
     // dependiecies in viewcomponent are put in constructor
     // view components have nothoing to do with either requests or model biding
     // default return view(no parameters) look in SHARED/COMPONENTS/{ViewComponent}/Default.cshtml

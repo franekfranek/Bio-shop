@@ -114,9 +114,9 @@ namespace ShopCart.Infrastructure
 
                     }
 
-                    var active = currentPage == PageNumber ? "active" : "";
+                    var active = currentPage == PageNumber ? "active" : ";";
 
-                    content.Append($"<li class='page-item {active}'><a class='page-link'href='{PageTarget}?p={currentPage}'>{currentPage}</a></li>");
+                    content.Append($"<li class='page-item {active}'><a class='page-link' id={active}  href='{PageTarget}?p={currentPage}'>{currentPage}</a></li>");
 
                 }
 

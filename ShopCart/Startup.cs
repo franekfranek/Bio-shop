@@ -91,7 +91,7 @@ namespace ShopCart
                         name: "areas",
                         areaName: "General",
                         pattern: "{area:exists}/{controller=Pages}/{action=Page}/{id?}"
-                    //defaults: new { area = "General", controller = "Pages", action = "Page" }
+                        //defaults: new { area = "General", controller = "Pages", action = "Page" }
                     );
                 endpoints.MapAreaControllerRoute(
                     name: "areas",

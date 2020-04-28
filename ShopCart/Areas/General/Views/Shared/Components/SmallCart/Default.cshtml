@@ -2,14 +2,19 @@
 
 @if (Model != null)
 {
-    <p>Items in cart :<span class="badge badge-primary">@Model.NumberOfItems</span></p>
-    <p>Total :<b>@Model.TotalAmount.ToString("C2")</b></p>
-    <a class="btn btn-primary mb-2" asp-controller="Cart" asp-action="Index">View cart</a>
+    <p>Items in cart :<span style="color:white; padding-right:3px; font-size:x-large"> @Model.NumberOfItems</span></p>
+    <p style="font-size:30px; ">Total:  <b>@Model.TotalAmount.ToString("C2")</b></p>
+    <a style="color:white;" asp-controller="Cart" asp-action="Index">
+    <i class="material-icons-outlined" style="color:white; font-size:36px;">shopping_cart</i>
+    <strong>View all</strong></a>
     <br />
-    <a class="btn btn-danger" asp-controller="Cart" asp-action="Clear">Clear cart</a>
+    <a style="color:white;" asp-controller="Cart" asp-action="Clear">
+    <i class="material-icons-outlined" style="color:white; font-size:36px; padding-right:10px;">remove_shopping_cart</i>
+    <strong>Clear </strong></a>
 
 }
 else
 {
-    <p class="lead m-0">Your cart is empty.</p>
+    <p class="lead m-0">Your cart is empty <i class="material-icons-outlined " id="empty-cart" >shopping_cart</i></p>
 }
+

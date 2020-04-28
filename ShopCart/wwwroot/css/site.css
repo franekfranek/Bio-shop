@@ -7,20 +7,24 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+  /*color: #0366d6;*/
 }
 
 .btn-primary {
   color: #fff;
-  background-color: #1b6ec2;
+  /*background-color: #1b6ec2;*/
   border-color: #1861ac;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #1b6ec2;
+  /*background-color: #1b6ec2;*/
   border-color: #1861ac;
 }
 
@@ -138,4 +142,67 @@ div.cartbg > img {
 form.paypalform{
     position:absolute;
     left: -3000px;
+}
+
+.banner {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+.side-icons {
+    vertical-align: bottom;
+    font-size: 36px !important;
+    padding-left: 5px;
+    float: right;
+    color:lightgreen;
+}
+
+#oval-shape {
+    background-color:lightgreen;
+    -moz-border-radius: 100px / 50px;
+    -webkit-border-radius: 100px / 50px;
+    border-radius: 100px / 50px;
+    text-align:center;
+}
+
+#empty-cart {
+    color: white;
+    font-size: 36px;
+    vertical-align: bottom;
+}
+
+.addToCart{
+    color:white;
+}
+
+.add {
+    background-color: lightgreen;
+    -moz-border-radius: 100px / 50px;
+    -webkit-border-radius: 100px / 50px;
+    border-radius: 100px / 50px;
+    text-align: center;
+}
+
+.page-link{
+    background-color:lightgreen;
+    color:white;
+}
+
+#active {
+    background-color:lightgreen;
+    border: white groove;
+}
+
+i.cart-icons-small{
+    color: lightgreen;
+    font-size: 36px;
+}
+
+.littleb {
+    position:relative;
+    align-content:center;
+    top:5px;
+    color: white;
+    font-size:20px;
+    font-weight:bold;
 }

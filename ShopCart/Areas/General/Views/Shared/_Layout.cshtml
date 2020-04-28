@@ -3,51 +3,95 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ShopCart</title>
+    <title>@ViewData["Title"] - Bio-shop</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
+    <style>
+        /* Stackoverflow preview fix, please ignore */
+        .navbar-nav {
+            flex-direction: row;
+        }
+
+        .nav-link {
+            padding-right: .5rem !important;
+            padding-left: .5rem !important;
+        }
+
+        /* Fixes dropdown menus placed on the right side */
+        .ml-auto .dropdown-menu {
+            left: auto !important;
+            right: 0px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="General" asp-controller="Pages" asp-action="Page">ShopCart</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        @await Component.InvokeAsync("MainMenu")
-                    </ul>
-                </div>
-            </div>
-        </nav>
+       
+        <div class="container" style="padding-top: 10px;">
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <a class="navbar-brand" asp-area="General" asp-controller="Pages" asp-action="Page">
+                    <img src="~/media/logi.png" alt="" height="60" width="80" />
+                </a>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" style="font-size:20px; color:lightgreen"><strong>Welcome to bio-shop!</strong></a>
+                    </li>
+                    
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <i class="material-icons-outlined side-icons side-icons">account_circle</i>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">Log in</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
+    <div class="container">
+        <img src="~/media/Organiko (2).png" alt="" class="banner" style="padding-bottom:px" />
+    </div>
+    <h6></h6>
+    <h6></h6>
     <div class="container">
         <main role="main" class="pb-3">
             <div class="row">
 
                 <div class="col-3">
                     @await Component.InvokeAsync("Categories")
-                    <div class="smallcart bg-success mt-3 p-3 text-white">
+                    <div class="smallcart mt-3 p-3 text-white" id="oval-shape">
                         @await Component.InvokeAsync("SmallCart")
 
                     </div>
                 </div>
 
+                @*remove_shopping_cart
+                    payment
+                    delete
+                    eco
+                    shopping_cart
+                    add_circle_outline
+                       remove_circle_outline*@
+
                 <div class="col">
 
                     @RenderBody()
                 </div>
-                    
+
             </div>
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2019 - ShopCart - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2020 - Bio-shop - @*<a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>*@
+            @await Component.InvokeAsync("MainMenu")
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

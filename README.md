@@ -12,11 +12,11 @@ pay for them with paypal. Admin user can add, edit and delete products to/from t
 * [Contact](#contact)
 
 ## Screenshots
-![](./ShopCart\wwwroot\media\Bio-shop\bs1.png)
-![](./ShopCart\wwwroot\media\Bio-shop\bs2.png)
-![](./ShopCart\wwwroot\media\Bio-shop\bs3.png)
-![](./ShopCart\wwwroot\media\Bio-shop\bs4.png)
-![](./ShopCart\wwwroot\media\Bio-shop\bs5.png)
+![](./ShopCart/wwwroot/media/Bio-shop/bs1.png)
+![](./ShopCart/wwwroot/media/Bio-shop/bs2.png)
+![](./ShopCart/wwwroot/media/Bio-shop/bs3.png)
+![](./ShopCart/wwwroot/media/Bio-shop/bs4.png)
+![](./ShopCart/wwwroot/media/Bio-shop/bs5.png)
 
 ## Technologies
 * Entity Framework 3.1.0 

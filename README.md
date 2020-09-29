@@ -23,6 +23,8 @@ pay for them with paypal. Admin user can add, edit and delete products to/from t
 * SqlServer 3.1.0
 * ASP.NET MVC 5.2.7
 * Bootstrap 4.3.1
+* JS
+
 
 ## Setup
 
@@ -34,9 +36,6 @@ pay for them with paypal. Admin user can add, edit and delete products to/from t
 * special admin panel 
 * visit social media accounts
 
-
-To-do:
-* connect farmers to customers
 
 ## Status
 Project is: _on hold_

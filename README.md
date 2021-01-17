@@ -12,18 +12,19 @@ pay for them with paypal. Admin user can add, edit and delete products to/from t
 * [Contact](#contact)
 
 ## Screenshots
-![](./GalileuszSchool/wwwroot/media/GalileuszSchoolPics/gs1.png)
-![](./GalileuszSchool/wwwroot/media/GalileuszSchoolPics/gs2.png)
-![](./GalileuszSchool/wwwroot/media/GalileuszSchoolPics/gs3.png)
-![](./GalileuszSchool/wwwroot/media/GalileuszSchoolPics/gs4.png)
-![](./GalileuszSchool/wwwroot/media/GalileuszSchoolPics/gs5.png)
-![](./GalileuszSchool/wwwroot/media/GalileuszSchoolPics/gs6.png)
+![](./ShopCart/wwwroot/media/Bio-shop/bs1.png)
+![](./ShopCart/wwwroot/media/Bio-shop/bs2.png)
+![](./ShopCart/wwwroot/media/Bio-shop/bs3.png)
+![](./ShopCart/wwwroot/media/Bio-shop/bs4.png)
+![](./ShopCart/wwwroot/media/Bio-shop/bs5.png)
 
 ## Technologies
 * Entity Framework 3.1.0 
 * SqlServer 3.1.0
 * ASP.NET MVC 5.2.7
 * Bootstrap 4.3.1
+* JS
+
 
 ## Setup
 
@@ -36,12 +37,8 @@ pay for them with paypal. Admin user can add, edit and delete products to/from t
 * visit social media accounts
 
 
-To-do:
-* register and login system
-* connect farmers to customers
-
 ## Status
-Project is: _in progress_
+Project is: _on hold_
 
 ## Contact
 franciszekezawadzki@gmail.com - feel free to contact me!

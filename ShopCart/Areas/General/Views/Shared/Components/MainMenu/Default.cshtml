@@ -4,7 +4,7 @@
 {
     @if (item.Slug != "home")
     {
-        <a asp-area="" asp-controller="Pages" asp-action="Page" 
+        <a class="nav-link"  asp-area="" asp-controller="Pages" asp-action="Page" 
                asp-route-slug="@item.Slug">@item.Title</a> 
     }
 }

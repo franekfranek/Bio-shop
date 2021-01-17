@@ -8,91 +8,83 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
-    <style>
-        /* Stackoverflow preview fix, please ignore */
-        .navbar-nav {
-            flex-direction: row;
-        }
-
-        .nav-link {
-            padding-right: .5rem !important;
-            padding-left: .5rem !important;
-        }
-
-        /* Fixes dropdown menus placed on the right side */
-        .ml-auto .dropdown-menu {
-            left: auto !important;
-            right: 0px;
-        }
-    </style>
+    
 </head>
 <body>
-    <header>
-       
-        <div class="container" style="padding-top: 10px;">
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-                <a class="navbar-brand" asp-area="General" asp-controller="Pages" asp-action="Page">
-                    <img src="~/media/logi.png" alt="" height="60" width="80" />
-                </a>
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" style="font-size:20px; color:lightgreen"><strong>Welcome to bio-shop!</strong></a>
-                    </li>
-                    
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <i class="material-icons-outlined side-icons side-icons">account_circle</i>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">Log in</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <div class="container">
-        <img src="~/media/Organiko (2).png" alt="" class="banner" style="padding-bottom:px" />
-    </div>
-    <h6></h6>
-    <h6></h6>
-    <div class="container">
-        <main role="main" class="pb-3">
-            <div class="row">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+        <a class="navbar-brand" asp-area="General" asp-controller="Products" asp-action="Index">
+            <img src="~/media/logi.png" alt="" height="60" width="80" />
+        </a>
+        <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item active">
+                <a class="nav-link ">Farmers</a>
+            </li>
+            
+            <li class="nav-item active">
+                <a class="nav-link" asp-area="General" asp-controller="Products" asp-action="Index">Products</a>
+            </li>
 
-                <div class="col-3">
-                    @await Component.InvokeAsync("Categories")
-                    <div class="smallcart mt-3 p-3 text-white" id="oval-shape">
-                        @await Component.InvokeAsync("SmallCart")
-
-                    </div>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link welcome"><strong>Welcome to bio-shop!</strong></a>
+            </li>
+            <i class="material-icons-outlined side-icons side-icons">account_circle</i>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">Log in</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Login in</a>
+                    <a class="dropdown-item" href="#">Your account</a>
                 </div>
+            </li>
+        </ul>
+    </nav>
+    <div alt="" class="banner"></div>
 
-                @*remove_shopping_cart
-                    payment
-                    delete
-                    eco
-                    shopping_cart
-                    add_circle_outline
-                       remove_circle_outline*@
+    <main role="main" class="main-container container">
+        <div class="row">
 
-                <div class="col">
+            <div class="col-3">
+                @await Component.InvokeAsync("Categories")
+                <div class="smallcart mt-3 p-3 text-white" id="oval-shape">
+                    @await Component.InvokeAsync("SmallCart")
 
-                    @RenderBody()
                 </div>
-
             </div>
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - Bio-shop - @*<a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>*@
+            @*remove_shopping_cart
+                payment
+                delete
+                eco
+                shopping_cart
+                add_circle_outline
+                    remove_circle_outline*@
+
+            <div class="col">
+
+                @RenderBody()
+            </div>
+
+        </div>
+    </main>
+
+    
+    <footer class="footer text-muted">
+        <div>
             @await Component.InvokeAsync("MainMenu")
         </div>
+        <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#fff" fill-opacity="1"
+                  d="M0,32L48,42.7C96,53,192,75,288,112C384,149,480,203,576,186.7C672,171,768,85,864,53.3C960,21,1056,43,1152,69.3C1248,96,1344,128,1392,144L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+        <div class="nav-link right-footer">
+            <img src="~/media/logi.png" alt="" height="60" width="80" />
+
+            &copy; 2021 - Bio-shop
+        </div>
+
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

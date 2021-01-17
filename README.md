@@ -15,7 +15,7 @@ pay for them with paypal. Admin user can add, edit and delete products to/from t
 ![](./ShopCart/wwwroot/media/Bio-shop/bs1.png)
 ![](./ShopCart/wwwroot/media/Bio-shop/bs2.png)
 ![](./ShopCart/wwwroot/media/Bio-shop/bs3.png)
-![](./ShopCart/wwwroot/media/Bio-shop/bs4.png)
+![](./ShopCart/wwwroot/media/Bio-shop/b4.png)
 ![](./ShopCart/wwwroot/media/Bio-shop/bs5.png)
 
 ## Technologies

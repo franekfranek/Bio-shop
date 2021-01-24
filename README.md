@@ -13,9 +13,13 @@ pay for them with paypal. Admin user can add, edit and delete products to/from t
 
 ## Screenshots
 ![](./ShopCart/wwwroot/media/Bio-shop/bs1.png)
+
 ![](./ShopCart/wwwroot/media/Bio-shop/bs2.png)
+
 ![](./ShopCart/wwwroot/media/Bio-shop/bs3.png)
+
 ![](./ShopCart/wwwroot/media/Bio-shop/b4.png)
+
 ![](./ShopCart/wwwroot/media/Bio-shop/bs5.png)
 
 ## Technologies
@@ -27,6 +31,7 @@ pay for them with paypal. Admin user can add, edit and delete products to/from t
 
 
 ## Setup
+Please clone the the repo, go to project directory and type _dotnet run_ in your terminal.
 
 ## Features
 * adding products to cart
